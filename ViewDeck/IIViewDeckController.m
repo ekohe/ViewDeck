@@ -1004,7 +1004,7 @@ static NSTimeInterval durationToAnimate(CGFloat pointsToAnimate, CGFloat velocit
 - (BOOL)shouldAutorotate {
     _preRotationSize = self.referenceBounds.size;
     _preRotationCenterSize = self.centerView.bounds.size;
-    _willAppearShouldArrangeViewsAfterRotation = self.interfaceOrientation;
+    _willAppearShouldArrangeViewsAfterRotation = [UIApplication sharedApplication].statusBarOrientation;
     
     // give other controllers a chance to act on it too
     [self relayRotationMethod:^(UIViewController *controller) {
